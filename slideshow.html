@@ -1,0 +1,54 @@
+<html>
+<head>
+<script language = "JavaScript">
+
+    
+
+var number = 0;
+var picList = ["images/Slide 1.jpg", "images/Slide 2.jpg", "images/Slide 3.jpg", "images/Slide 5.jpeg", "images/Slide 4.jpg", "images/Openingpage.jpeg"];
+var clipList = ["sounds/snowboarding1.mp3" , "sounds/snowboarding2.mp3" , "sounds/snowboarding3.mp3" , "sounds/snowboarding4.mp3"]
+function start()
+{
+    var pic = document.getElementById("picFrame");
+    pic.src = picList[number];
+    pic.height = 300;
+    
+    var clip = document.getElementById("myAudio")
+    clip.src = clipList[number]
+    clip.play()
+    
+    if(number == 5)
+    {  
+     
+     number = 0;
+   
+    }
+   
+    else
+    {
+     number = number + 1;
+     
+    }
+
+}
+
+
+
+</script>
+</head>
+<body bgcolor="darkgrey" link="black" vlink="black">
+<font color="black">
+<center>
+<h1> Slide Show </h1>
+Click here to <a href="index.html">return to my homepage.</a>
+ <br/>
+<img id="picFrame" src="images/Openingpage.jpeg"/>
+<audio id="myAudio"> </audio>
+<br/>
+<br/>
+
+<input type="button" value="Click Me" onClick="start()">
+
+</center>
+</body>
+</html>
