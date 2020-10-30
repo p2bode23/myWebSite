@@ -1,0 +1,62 @@
+<html>
+<head>
+<script languague = "JavaScript">
+var answers =   ["yes","no","maybe","probobly.....not","never","absolutely","mabe...not","probobly","try again","depends"]
+var clipList = ["sounds/8Ball.mp3"]
+function random()
+{
+    var userQ = document.getElementById("question");
+    var rand = -1;
+    var myAnswer = document.getElementById("answer");
+    
+    var clip = document.getElementById("myAudio")
+    
+    rand = Math.random()*answers.length;
+    rand = Math.floor(rand);
+    
+    if(userQ.value.length ==0)
+    {
+        myAnswer.value = "Please ask a question first before I answer"
+    }
+    else
+    {
+        
+    myAnswer.value = answers[rand];
+        
+    clip.src = clipList
+    clip.play()
+   
+    }
+}
+function reset()
+{
+ document.getElementById("answer").value = "";   
+}    
+
+</script>
+</head>
+<body
+      background="http://coolarchive.com/textures/fur/009.gif" link="lightblue" vlink="lightblue">
+<font color="white" size="6">
+    
+<center>
+       
+<h1>Magic 8 Ball</h1>
+  <br/>
+ <img 
+  src=https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/8-Ball_Pool.svg/1024px-8-Ball_Pool.svg.png width="400">
+<br/>
+<br/>
+    <p> Click here to <a href="index.html">go back to my index page. </a> </p>
+ <br/>
+    
+    <br/>
+  <input id="question" type=“text” size=”80” onfocusin = "reset()"/>
+    <input type="button" value="Click" onClick="random()"/>
+    <input id="answer" type=“text” size=”80” readonly = true/>
+    <audio id="myAudio"> </audio>
+    <p>
+    This magic 8 ball page is used like the game or magic eightball. You click the "Click Me" button and It gives you a number. </p>
+<center/>
+<body/>
+<html/>
