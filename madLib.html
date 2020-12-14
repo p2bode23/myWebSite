@@ -1,0 +1,78 @@
+<html>
+<head> 
+<script language="JavaScript">
+var partsOfSpeech = ["choose an adjective", "choose a feeling of emotion", "choose an noun", "choose another noun", "choose a verb", "choose a noun" , " choose aother noun" , " choose 2 nouns" ," chose a noun" ];
+var answers = new Array(partsOfSpeech.length);
+var story = [" The world is a ", "place. It is full of ", " people who lives. There is an abundant amount of ", " that live on earth with humans.", " fly, while tigers run, and fish ", ", while bugs crawl. Humans are highly advanced compared to the other species on earth. We as a whole have created ", " and other large human advancements. Rightnow the earth is going through a" , " that is killing millions. In the U.S. the virus is affecting us by not being able to see anyone besides close family. I personally only see a limited amount of " , " because of this virus. Some people are struggling with", "and health during this virus because of the limited amount of money that people are receiving. This virus is not to be taken lightly and very harmful to the human body (in some cases)."];
+var count = 0; 
+function prompt()
+{
+document.getElementById("userEnter").style.visibility = "visible";
+document.getElementById("story").style.visibility = "hidden";
+document.getElementById("response").value = partsOfSpeech[count];
+}
+
+function getWords()
+{
+   var wordBox = document.getElementById("response");
+   answers[count] = wordBox.value;
+    
+    count++;
+    
+    if( count <partsOfSpeech.length )
+    {
+    prompt()
+    }
+    else
+    {
+    count = 0;
+    document.getElementById("story").innerHTML = displayStory();
+    }
+        
+        
+        
+        
+}
+    
+
+function displayStory()
+{
+	var answer = "";
+	var i;
+	
+    
+    answer = answer + story[0];
+    answer = answer + partsOfSpeech[0];
+	
+	for ( i = 0; i< answers.length; i++)
+	{
+	
+	}
+	
+ document.getElementById("userEnter").style.visibility = "hidden";
+    document.getElementById("story").style.visibility = "visible";
+    
+    return answer;
+}
+    
+
+</script>
+</head>
+<body>
+<center>
+<h1>My MadLib!</h1>
+<input id="daButton" type="button" value="start" onClick="prompt()"/>
+</center>
+<div id="userEnter" style="position:absolute; left:200; top: 100; visibility:hidden;">
+<input type = "text" id="response" value="" onfocusout="getWords()"/></p>
+</div>
+Click here to <a href="index.html"> go back home.
+    <br/>
+    <br/>
+
+<div id="story" style="position:absolute; overflow:scroll; top:300; left:200; width:400; height: 200; visibility:hidden">
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+<div>
+
+</body>
+</html>
