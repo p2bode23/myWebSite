@@ -1,0 +1,87 @@
+<html> 
+<head> 
+<script language="JavaScript">
+
+/*************** Algorithm ******************
+1.Created my variables such as my questions and answers.
+2.I started to create functions, displayQuestions, and the function to update answers.
+3.I made Display question loop in order to loop through all of the questions.
+4. The user submits there answer and hen sees if it is the same as the answer that the creator/me put.
+5. The update score function will cheak the answer to see if they match up.
+6. After the corect answer is shown after the user inputes there guess then it will answer if they are correct or not.
+7. Then once the user looks to see if they are correct or not the cycle repeats itself.(restarts the algoritim)
+
+*/
+
+
+var questions = ["What player has the best shot percentage?", "Whats is the position that Stephen Curry plays?", "Who is the most well known player of all time?", "What player sadly passed away from a helicoper crash.?", "Finshis the name: Lebron _____?", "Who is the best player of all time?" , "Whats the most popular brand of shoes in the NBA?" , "What is the most popular team?" ,"Whose the best overall athlete?" ];
+
+var answers = ["DeAndre Jordan", "Point Guard", "Michal Jordan", "Kobe", "James", "Michal Jordan" , "Nike" , "Lakers" ,"Giannis Antetokounmpo" ];
+
+var index = 0;
+
+var score = 0
+
+
+function displayQuestion()
+{
+    
+document.getElementById("question").value = questions[index]
+ 
+if(index == 9)
+    {
+        index = 0
+        document.getElementById("answer").value = ""
+        document.getElementById("question").value = "score is " + score + "   out of 9"
+    }
+    
+}
+
+function updateScore()
+{
+    var wordBox = document.getElementById("answer");
+    if(wordBox.value == answers[index])
+    {
+        document.getElementById("question").value = "Correct"
+        document.getElementById("answer").value = ""
+        index++
+        score++
+     }
+    else
+    {
+        document.getElementById("question").value = "Incorrect"
+        document.getElementById("answer").value = ""
+        index++
+    }
+	
+}
+
+
+</script>
+</head>
+<body bgcolor="lightblue" link="lightblue" vlink="purple"> 
+<center>
+<h1>BasketBall Trivia</h1>
+<br/>
+Click here to <a href="index.html">return to my homepage.</a>
+<br/><br/>
+<table border = 3>
+	<tr>
+		<td>  	<input id="question" type="text" size="70" readonly = true/>	</td>
+	</tr>
+	<tr height = "12"><td></td>
+	</tr>
+	<tr>
+		<td>	<input id="answer" type="text" size="70" onfocusout="updateScore()"/> </td>
+	</tr>
+</table>
+<br/><br/>
+<input type="button" value="Next Question" onclick="displayQuestion()"/>
+</center>
+<div style="position:absolute; top:300; left:400">
+<img 
+src= "images/BBALL.jpg"
+
+ width="500"/>
+</body>
+</html>
